@@ -8,7 +8,7 @@ that affects code syntax rewriting.
 Different branches, one each for a specific version of the compiler,
 show the problem. Only Scala 3.0.0 and 3.0.1 don't have the problem.
 
-## So, what IS the problem?
+## So, what _is_ the problem?
 
 Scala 3 introduces a couple of [optional] changes to the language syntax.
 It introduces a new control structure syntax and a significant indentation
@@ -53,5 +53,18 @@ So, a full cycle can be performed in 4 rewrite steps as shown here:
 On version 3.0.2 and higher of the Scala compiler, the compiler generates incorrect
 code: it omits closing curly braces '}' in some cases. I haven't been able to see
 a pattern in the places where this occurs. Overall, 12 closing braces are missing.
+
+## The different branches
+
+Different branches have been created, each one is linked and named to a specific Scala version:
+
+<pre>
+   `3.0.0`:   Scala 3.0.0
+   `3.0.1`:   Scala 3.0.1
+   `3.0.2`:   Scala 3.0.2
+   `3.1.0`:   Scala 3.1.0
+   `3.1.3`:   Scala 3.1.3
+   `main`:    Scala 3.3.0-RC3
+</pre>
 
 
