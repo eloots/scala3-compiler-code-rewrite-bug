@@ -4,7 +4,7 @@ import SudokuDetailProcessor.{Update, SudokuDetailUnchanged, BlockUpdate}
 import akka.actor.testkit.typed.scaladsl.ActorTestKit
 import java.nio.file.*
 
-class SudokuDetailProcessorSuite extends munit.FunSuite with SudokuTestHelpers:
+class SudokuDetailProcessorSuite extends munit.FunSuite with SudokuTestHelpers {
 
   val testKit: ActorTestKit = ActorTestKit()
 
@@ -100,3 +100,4 @@ class SudokuDetailProcessorSuite extends munit.FunSuite with SudokuTestHelpers:
     detailParentProbe.expectMessage(SudokuDetailUnchanged)
 
   }
+}
