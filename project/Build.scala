@@ -27,11 +27,11 @@ object Dependencies {
     "com.typesafe.akka"             %% "akka-actor-typed",
     "com.typesafe.akka"             %% "akka-slf4j",
     "com.typesafe.akka"             %% "akka-stream",
-  ).map (_ % Versions.akkaVer)
+  ).map (_ % Versions.akkaVer).map(_.cross(CrossVersion.for3Use2_13))
 
   private lazy val akkaTestkitDeps = Seq(
     "com.typesafe.akka"             %% "akka-actor-testkit-typed" % Versions.akkaVer % Test
-  )
+  ).map(_.cross(CrossVersion.for3Use2_13))
 
   private lazy val logbackDeps = Seq (
     "ch.qos.logback"                 %  "logback-classic",
