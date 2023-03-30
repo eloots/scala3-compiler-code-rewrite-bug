@@ -33,6 +33,7 @@ package object sudoku {
       }
       yield y
       SudokuField(sudoku)
+    }
   }
 
   implicit class SudokuFieldOps(val sudokuField: SudokuField) extends AnyVal {
@@ -78,4 +79,5 @@ package object sudoku {
         .map { case (c, i) =>
           RowUpdate(i, c.map(_.swap))
         }
+  }
 }

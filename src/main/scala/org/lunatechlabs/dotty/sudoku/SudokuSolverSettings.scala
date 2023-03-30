@@ -19,4 +19,5 @@ class SudokuSolverSettings(config: Config) {
 
     val SendInterval: FiniteDuration =
       Duration(config.getDuration("sudoku-solver.problem-sender.send-interval", Millis), Millis)
+  }
 }

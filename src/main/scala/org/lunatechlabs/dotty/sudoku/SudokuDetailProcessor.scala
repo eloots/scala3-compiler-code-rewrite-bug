@@ -46,6 +46,7 @@ object SudokuDetailProcessor {
     def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit sender: ActorRef[Response]): Unit =
       sender ! BlockUpdate(id, cellUpdates)
     def processorName(id: Int): String = s"blk-processor-$id"
+  }
 }
 
 class SudokuDetailProcessor[DetailType <: SudokuDetailType: UpdateSender] private (
@@ -73,6 +74,7 @@ class SudokuDetailProcessor[DetailType <: SudokuDetailType: UpdateSender] privat
             val updateSender = implicitly[UpdateSender[DetailType]]
             updateSender.sendUpdate(id, stateChanges(state, transformedUpdatedState))(replyTo)
             operational(id, transformedUpdatedState, isFullyReduced(transformedUpdatedState))
+          }
         }
 
       case Update(_, replyTo) =>
@@ -105,4 +107,5 @@ class SudokuDetailProcessor[DetailType <: SudokuDetailType: UpdateSender] privat
   private def isFullyReduced(state: ReductionSet): Boolean = {
     val allValuesInState = state.flatten
     allValuesInState == allValuesInState.distinct
+  }
 }
