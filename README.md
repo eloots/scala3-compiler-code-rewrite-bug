@@ -59,12 +59,12 @@ a pattern in the places where this occurs. Overall, 12 closing braces are missin
 Different branches have been created, each one is linked and named to a specific Scala version:
 
 <pre>
-   `3.0.0`:   Scala 3.0.0
-   `3.0.1`:   Scala 3.0.1
-   `3.0.2`:   Scala 3.0.2
-   `3.1.0`:   Scala 3.1.0
-   `3.1.3`:   Scala 3.1.3
-   `main`:    Scala 3.3.0-RC3
+✔︎   3.0.0:   Scala 3.0.0
+✔︎   3.0.1:   Scala 3.0.1
+✗   3.0.2:   Scala 3.0.2
+✗   3.1.0:   Scala 3.1.0
+✗   3.1.3:   Scala 3.1.3
+✗   main:    Scala 3.3.0-RC3
 </pre>
 
 
