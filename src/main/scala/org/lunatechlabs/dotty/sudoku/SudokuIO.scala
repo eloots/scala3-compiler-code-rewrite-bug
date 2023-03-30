@@ -54,10 +54,12 @@ object SudokuIO {
             else {
               cachedLine = Some(line)
               true
+            }
           }
           catch {
             case e: java.io.IOError =>
               throw new IllegalStateException(e.toString)
+          }
       }
 
       override def next(): String = {
@@ -65,6 +67,7 @@ object SudokuIO {
         val currentLine = cachedLine.get
         cachedLine = None
         currentLine
+      }
     }
     override def toString: String =
       "{Lines of " + file.getAbsolutePath + "}"
@@ -92,4 +95,5 @@ object SudokuIO {
         .zipWithIndex
 
     convertFromCellsToComplete(cellsIn)
+  }
 }
