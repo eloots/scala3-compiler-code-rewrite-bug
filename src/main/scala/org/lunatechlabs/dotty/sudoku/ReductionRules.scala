@@ -38,4 +38,5 @@ object ReductionRules {
     reductionSet.zipWithIndex.foldRight(Vector.empty[CellContent]) { case ((cellValue, cellIndex), acc) =>
       cellIndexToReducedValue.getOrElse(cellIndex, cellValue) +: acc
     }
+  }
 }
