@@ -48,4 +48,5 @@ object SudokuSolverMain {
     println(s"${GREEN}Hit RETURN to stop solver${RESET}")
     StdIn.readLine()
     system.terminate()
+  }
 }
