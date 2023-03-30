@@ -1,6 +1,6 @@
 package org.lunatechlabs.dotty.sudoku
 
-class ReductionRuleSuite extends munit.FunSuite with SudokuTestHelpers:
+class ReductionRuleSuite extends munit.FunSuite with SudokuTestHelpers {
   test(
     "Applying reduction rules should eliminate values in isolated complete sets from occurrences in other cells (First reduction rule)") {
 
@@ -188,3 +188,4 @@ class ReductionRuleSuite extends munit.FunSuite with SudokuTestHelpers:
 
     assertEquals(applyReductionRules(input), reducedInput)
   }
+}
